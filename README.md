@@ -1,25 +1,22 @@
-# DATA_AV
-======================================================
 To compile type "make"
+=
 To run the code "./data_av" for singlethread 
 and "./data_av -m" for multithread execution.
-======================================================
 
-======================================================
 File reading:
 Only formatted lines are processed.
 If a line has max but, not min that line is ommited.
 Total values are temperature that have been processed.
 The program assumes all of the files are in the same
 folder as the executable.
-======================================================
 
 
 Report and Observations
-==============================================================================================
-Clock Time:
-mulithread average over 50 runs = 174536
-singlethread average over 50 runs = 172704
+=
+	Clock Time:
+
+	mulithread average over 50 runs = 174536
+	singlethread average over 50 runs = 172704
 
 Printing the values seems to be faster on multithread,
 but the overall program takes longer to terminate.
@@ -44,11 +41,10 @@ Synchronization:
 The critical section in the program consists of comparing minimum and maximium overall
 temperatures, it's relative cities, and total values processed. When running without locks
 most of the time it these values are correct, but to be consistent and for getting the right
-values, a mutex lock is used in this section of the code.
+values a mutex lock is used in this section of the code.
 
 Different OS:
 This program has been ran on macOS Monterey version 12.5, this particular machine has 8 cores.
 The clock time of this program is significantly slower on multithread mode around 520k, while
 on singlethread mode the clock time is around 50k. But, printing the values seems to be faster
 on multithread mode, but termination takes longer.
-==============================================================================================
